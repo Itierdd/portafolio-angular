@@ -15,46 +15,42 @@
       <p class="rk-footer__text rk-footer__copy">
         <span class="ae-u-bold"
           >&reg;<span class="ae-u-bolder"></span>Itierdd {{ anio }} all Right
-          Reserved.</span
-        >
+          Reserved.</span>
       </p>
     </div>
 
-
     <div class="ae-grid__item item-lg-4 au-xs-ta-center">
-      <a href="#0" class="rk-social-btn">
+      <a target='_blank' [href]="_service.info.facebook" class="rk-social-btn">
         <svg>
-          <use xlink:href="assets/img/symbols.svg#icon-facebook"></use></svg>
-          </a>
-          <a href="#0" class="rk-social-btn">
-        <svg>
-          <use xlink:href="assets/img/symbols.svg#icon-twitter">
-          </use>
+          <use xlink:href="assets/img/symbols.svg#icon-facebook"></use>
         </svg>
-          </a>
-          <a href="#0" class="rk-social-btn">
+      </a>
+
+      <a target='_blank' [href]="_service.info.twitter" class="rk-social-btn">
         <svg>
-          <use
-            xlink:href="assets/img/symbols.svg#icon-instagram">
-          </use>
+          <use xlink:href="assets/img/symbols.svg#icon-twitter"></use>
         </svg>
-        </a
-      ><a href="#0" class="rk-social-btn">
+      </a>
+
+      <a target='_blank' [href]="_service.info.instagram" class="rk-social-btn">
         <svg>
-          <use
-            xlink:href="assets/img/symbols.svg#icon-dribble"
-          ></use></svg></a
-      ><a href="#0" class="rk-social-btn"> </a>
+          <use xlink:href="assets/img/symbols.svg#icon-instagram"></use>
+        </svg>
+      </a>
 
-
-
+      <a target='_blank' [href]="_service.info.dribble" class="rk-social-btn">
+        <svg>
+          <use xlink:href="assets/img/symbols.svg#icon-dribble"></use>
+        </svg>
+      </a>
     </div>
+
     <div class="ae-grid__item item-lg-4 au-xs-ta-center au-lg-ta-right">
       <p class="rk-footer__text rk-footer__contact">
-        <span class="ae-u-bold">Email: </span
-        ><span class="ae-u-bolder">
-          <a href="#0" class="rk-dark-color">services@itierdd.com </a></span
-        >
+        <span class="ae-u-bold">Email: </span>
+        <span class="ae-u-bolder">
+          <a href="mailto:{{ _service.info.email}}" class="rk-dark-color">{{ _service.info.email}} </a>
+        </span>
       </p>
     </div>
   </div>
