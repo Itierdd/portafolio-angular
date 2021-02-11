@@ -9,6 +9,7 @@ export class ProductosService {
 
   cargando = true;
   productos: Producto[] = [];
+  productosFiltrado: Producto [] = [];
 
   constructor( private http: HttpClient ) { 
 
@@ -16,19 +17,17 @@ export class ProductosService {
 
   }
 
+
   private cargarProductos(){
 
-    this.http.get('https://angular-html-82333-default-rtdb.firebaseio.com/productos_idx.json')
-    .subscribe( (resp: Producto[]) => {
+    return new Promise (  ( resolve, reject ) => {
 
-      /*llamar productos a consola*/
-      /*console.log(resp)*/
-      this.productos = resp;
-      this.cargando = false;
-      //Carga de animacion svg
-      /*setTimeout(() => {
+      this.http.get('https://angular-html-82333-default-rtdb.firebaseio.com/productos_idx.json')
+      .subscribe( (resp: Producto[]) => {
+        this.productos = resp;
         this.cargando = false;
-      }, 1000);*/
+         resolve;
+      });
 
     });
   }
@@ -36,6 +35,31 @@ export class ProductosService {
   getProducto(id: string ){
 
     return this.http.get(`https://angular-html-82333-default-rtdb.firebaseio.com/productos/${ id }.json`);
+
+  }
+
+  buscarProducto( termino: string){
+
+
+    if(this.productos.length === 0 ){
+      //Cargar productos
+      this.cargarProductos().then( () => {
+        // ejecutar despues de tener los productos
+        // Aplicar filtro
+        this.filtrarProductos (termino);
+      });
+
+    } else{
+      // aplicar el filtro
+      this.filtrarProductos(termino);
+    }
+
+
+  }
+
+  private filtrarProductos( termino: string ){
+
+    console.log(this.productos);
 
   }
 
