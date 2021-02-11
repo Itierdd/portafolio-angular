@@ -24,6 +24,12 @@ export class ProductosService {
       console.log(resp)
       this.productos = resp;
       this.cargando = false;
+
+      //Carga de animacion svg
+      /*setTimeout(() => {
+        this.cargando = false;
+      }, 1000);*/
+
     });
   }
 }

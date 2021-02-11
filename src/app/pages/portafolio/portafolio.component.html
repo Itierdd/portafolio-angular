@@ -2,8 +2,8 @@
 
   <!-- 1 -->
 
-  <div>
-    <h2>Cargando...</h2>
+  <div align ="center" *ngIf="productosService.cargando">
+    <h4>Loading...</h4>
     <div class="loader loader--style1" title="0">
       <svg
         version="1.1"
@@ -42,10 +42,12 @@
         </path>
       </svg>
     </div>
+    <p>wait a minute</p>
   </div>
 
 
-  <div class="ae-masonry ae-masonry-md-2 ae-masonry-xl-4">
+  <div *ngIf="!productosService.cargando"
+  class="ae-masonry ae-masonry-md-2 ae-masonry-xl-4">
     <a
       *ngFor="let producto of productosService.productos"
       routerLink="/item"
