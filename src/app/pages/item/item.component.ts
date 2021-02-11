@@ -12,6 +12,7 @@ export class ItemComponent implements OnInit {
 
 
   producto: ProductoDescripcion;
+  id: string;
 
 
   constructor( private route: ActivatedRoute,
@@ -25,10 +26,8 @@ export class ItemComponent implements OnInit {
      // console.log(parametros['id']);
       this.ProductoService.getProducto(parametros['id'])
         .subscribe( (producto: ProductoDescripcion ) => {
+          this.id = parametros['id'];
           this.producto = producto;
-          console.log(producto);
-          
-
         });
     });
 
