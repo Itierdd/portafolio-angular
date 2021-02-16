@@ -26,11 +26,14 @@ export class ProductosService {
       .subscribe( (resp: Producto[]) => {
         this.productos = resp;
         this.cargando = false;
-         resolve;
+        resolve;
       });
+    
 
     });
   }
+
+ 
 
   getProducto(id: string ){
 
@@ -43,10 +46,10 @@ export class ProductosService {
 
     if(this.productos.length === 0 ){
       //Cargar productos
-      this.cargarProductos().then( () => {
-        // ejecutar despues de tener los productos
-        // Aplicar filtro
-        this.filtrarProductos (termino);
+        this.cargarProductos().then( ()=> {
+      //ejecutar despues de obtener los productos
+      // Aplciar filtro
+      this.filtrarProductos(termino);
       });
 
     } else{
@@ -54,12 +57,25 @@ export class ProductosService {
       this.filtrarProductos(termino);
     }
 
-
   }
 
   private filtrarProductos( termino: string ){
 
-    console.log(this.productos);
+    //console.log(this.productos);
+    this.productosFiltrado = [];
+
+    termino = termino.toLocaleLowerCase();
+
+    this.productos.forEach(prod => {
+
+      const tituloLower = prod.titulo.toLocaleLowerCase();
+
+      if ( prod.categoria.indexOf( termino ) >= 0 || tituloLower.indexOf(termino) >= 0 ){
+        this.productosFiltrado.push( prod );
+      }
+
+
+    });
 
   }
 
