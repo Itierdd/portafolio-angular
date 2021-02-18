@@ -13,10 +13,15 @@
   </label>
   <div class="ae-container-fluid rk-topbar">
     <h1 class="rk-logo">
-      <a routerLink="home">{{_service.info.title}}<span>&#174;</span> </a>
+      <a>
+        <span routerLinkActive="active" class="active rk-navigation rk-menu__item">
+        <img routerLink="home" src="./../../../assets/img/itierddForWeb-06.png" width="150px" alt="itier.dd">
+      </span>
+      </a>
     </h1>
     <nav class="rk-navigation">
       <ul class="rk-menu">
+
         <li routerLinkActive="active" class="active rk-menu__item">
           <a routerLink="home" class="rk-menu__link">Home</a>
         </li>
@@ -24,7 +29,14 @@
         <li routerLinkActive="active"  class="rk-menu__item">
           <a routerLink="about" class="rk-menu__link">About us</a>
         </li>
+
+        <li routerLinkActive="active"  class="rk-menu__item">
+          <a routerLink="contactUs" class="rk-menu__link">Contact</a>
+        </li>
+
       </ul>
+
+      
 
       <div class="rk-search">
         <input type="text"
