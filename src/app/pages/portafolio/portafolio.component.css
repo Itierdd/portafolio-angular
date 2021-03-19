@@ -1,3 +1,14 @@
 .body{
     color: #db4c55;
 }
+
+#h1{
+    margin-left: 100px;
+}
+
+#paragraph-title-portfolio{
+    font-size: 40px;
+    text-align: start; 
+    color: #db4c55; 
+    font-family: 'Ubuntu', sans-serif; 
+}
